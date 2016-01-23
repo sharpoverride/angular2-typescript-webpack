@@ -1,0 +1,37 @@
+<div class="dashboard">
+	<div class="form-horizontal">
+
+		<div class="form-group">
+			<label class="control-label col-xs-5">Name</label>
+			<div class="col-xs-7">
+				<input type="text" class="form-control" [(ngModel)]="model.name">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-xs-5">Occupation</label>
+			<div class="col-xs-7">
+				<input type="text" class="form-control" [(ngModel)]="model.occupation">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-xs-5">Favorite color</label>
+			<div class="col-xs-7">
+				<select class="form-control" [(ngModel)]="selectedColor">
+					<option value=""></option>
+					<option *ngFor="#item of colors" [value]="item.id">{{item.name}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="text-right">
+			<button type="button" class="btn btn-primary" (click)="onSubmitClick()">Submit</button>
+		</div>
+
+	</div>
+
+	<div class="output" [hidden]="!submitted">
+		<pre>{{model | json}}</pre>
+	</div>
+</div>
