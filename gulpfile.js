@@ -22,7 +22,3 @@ gulp.task("default", function() {
 		"./src/ts/**/*.ts"
 	], ["webpack"]);
 });
-
-gulp.task("prod", function() {
-	runSequence("clean", "copy", "webpack-prod", "less");
-});
